@@ -9,6 +9,9 @@ public class arrayGame {
          while (attempts < 10) { 
             System.out.println("Enter your guess");
             String guess = in.nextLine();
+            if (guess.length() != wordLength) {
+                System.out.println("invaild guess! please input a word with " + wordLength + " characters");
+            }
 
          }
 
