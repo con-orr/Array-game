@@ -12,10 +12,18 @@ public class arrayGame {
             String guess = in.nextLine();
             if (guess.length() != wordLength) {
                 System.out.println("invaild guess! please input a word with " + wordLength + " characters");
-                continue;
+                
+            } 
+            if (guess.equals(secretWord)){
+                System.out.println("You guessed the correct word!");
             }
+             
 
          }
+          if (attempts == 10) {
+            System.out.println("You couldn't guess the word. The secret word was: " + secretWord);
+        }
+    }
 
     }
     public static String generateSecretWord(int wordLength) {
