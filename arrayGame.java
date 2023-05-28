@@ -17,7 +17,10 @@ public class arrayGame {
             if (guess.equals(secretWord)){
                 System.out.println("You guessed the correct word!");
             }
-             
+             else {
+                String feedback = provideFeedback(guess, secretWord);
+                System.out.println(feedback);
+                attempts++;
 
          }
           if (attempts == 10) {
@@ -30,5 +33,22 @@ public class arrayGame {
         String[] words = {"apple", "pears", "peach", "lemon", "grape", "melon", "kiwis" };
         int randomPicker = (int) (Math.random()*words.length);
         return words[randomPicker];
+    }
+     public static String provideFeedback(String guess, String secretWord) {
+        String feedback = "";
+
+        for (int i = 0; i < guess.length(); i++) {
+            char guessChar = guess.charAt(i);
+
+            if (guessChar == secretWord.charAt(i)) {
+                feedback += guessChar;
+            } else if (secretWord.contains(String.valueOf(guessChar))) {
+                feedback += "*";
+            } else {
+                feedback += "-";
+            }
+        }
+
+        return feedback;
     }
 }
