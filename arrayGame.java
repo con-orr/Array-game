@@ -3,9 +3,12 @@ import java.util.Scanner;
 public class arrayGame {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        boolean EndGame = false;
          int wordLength = 5;
          int attempts = 0;
+         
          String secretWord = generateSecretWord(5); //pulls a random word from the array to be used for the current round
+         System.out.println("welcome to foodle, a food based wordle game, you have 10 attempts to guess the word. misplaced letters are printed as * and incorrect letters are -, every secret word only has 5 letters! good luck!");
 
          while (attempts < 10) { 
             System.out.println("Enter your guess");
@@ -16,6 +19,7 @@ public class arrayGame {
             } 
             if (guess.equals(secretWord)){
                 System.out.println("You guessed the correct word!");
+                EndGame = true;
             }
              else {
                 String feedback = provideFeedback(guess, secretWord);
@@ -25,6 +29,9 @@ public class arrayGame {
          }
           if (attempts == 10) {
             System.out.println("You couldn't guess the word. The secret word was: " + secretWord);
+        }
+        if (EndGame = true){
+            in.close();
         }
     }
 
