@@ -7,8 +7,7 @@ public class arrayGame {
         int wordLength = 5;
         int attempts = 0;
 
-        String secretWord = generateSecretWord(5); // pulls a random word from the array to be used for the current
-                                                   // round
+        String secretWord = generateSecretWord(5); // pulls a random word from the array to be used for the current round
         System.out.println(
                 "welcome to foodle, a food based wordle game, you have 10 attempts to guess the word. misplaced letters are printed as * and incorrect letters are -, every secret word only has 5 letters! good luck!");
 
