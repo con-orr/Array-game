@@ -36,7 +36,7 @@ public class arrayGame {
     }
 
     public static String generateSecretWord(int wordLength) {
-        String[] words = { "apple", "pears", "peach", "lemon", "grape", "melon", "kiwis" };
+        String[] words = { "apple", "pears", "peach", "lemon", "grape", "melon", "kiwis", "mango", "pecan", "onion" };
         int randomPicker = (int) (Math.random() * words.length);
         return words[randomPicker];
     }
