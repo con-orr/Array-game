@@ -30,10 +30,16 @@ public class arrayGame {
             }
             if (attempts == 5) {
                 System.out.println("You couldn't guess the word. The secret word was: " + secretWord);
+                break;
             }
 
         }
     }
+    public static final String ANSI_YELLOW = "\u001B[33m";
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    
+    public static final String ANSI_RED = "\u001B[31m";
 
     public static String generateSecretWord(int wordLength) {
         String[] words = { "apple", "pears", "peach", "lemon", "grape", "melon", "kiwis", "mango", "pecan", "onion" };
@@ -50,9 +56,9 @@ public class arrayGame {
             if (guessChar == secretWord.charAt(i)) {
                 feedback += guessChar;
             } else if (secretWord.contains(String.valueOf(guessChar))) {
-                feedback += "*";
+                feedback += ANSI_YELLOW + "*" + ANSI_RESET;
             } else {
-                feedback += "-";
+                feedback += ANSI_RED + "-" + ANSI_RESET;
             }
         }
 
