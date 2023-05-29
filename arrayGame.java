@@ -35,11 +35,11 @@ public class arrayGame {
 
         }
     }
-    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String YellowText = "\u001B[33m";
 
-    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ResetText = "\u001B[0m";
     
-    public static final String ANSI_RED = "\u001B[31m";
+    public static final String RedText = "\u001B[31m";
 
     public static String generateSecretWord(int wordLength) {
         String[] words = { "apple", "pears", "peach", "lemon", "grape", "melon", "kiwis", "mango", "pecan", "onion" };
@@ -56,9 +56,9 @@ public class arrayGame {
             if (guessChar == secretWord.charAt(i)) {
                 feedback += guessChar;
             } else if (secretWord.contains(String.valueOf(guessChar))) {
-                feedback += ANSI_YELLOW + "*" + ANSI_RESET;
+                feedback += YellowText + "*" + ResetText;
             } else {
-                feedback += ANSI_RED + "-" + ANSI_RESET;
+                feedback += RedText + "-" + ResetText;
             }
         }
 
