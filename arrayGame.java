@@ -41,7 +41,7 @@ public class arrayGame {
     
     public static final String RedText = "\u001B[31m";
 
-    public static String generateSecretWord(int wordLength) {
+    public static String generateSecretWord(int wordLength) { //array of words used in game
         String[] words = { "apple", "pears", "peach", "lemon", "grape", "melon", "kiwis", "mango", "pecan", "onion" };
         int randomPicker = (int) (Math.random() * words.length);
         return words[randomPicker];
@@ -53,7 +53,7 @@ public class arrayGame {
         for (int i = 0; i < guess.length(); i++) {
             char guessChar = guess.charAt(i);
 
-            if (guessChar == secretWord.charAt(i)) {
+            if (guessChar == secretWord.charAt(i)) { //swaps letters out for symbols
                 feedback += guessChar;
             } else if (secretWord.contains(String.valueOf(guessChar))) {
                 feedback += YellowText + "*" + ResetText;
